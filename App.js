@@ -11,7 +11,7 @@ import ordersReducer from './store/reducers/orders';
 import ShopNavigator from './navigation/ShopNavigator';
 
 const rootReducer = combineReducers({
-  products: productsReducer,
+    products: productsReducer,
     cart: cartReducer,
     orders: ordersReducer
 });
