@@ -10,6 +10,7 @@ import CartScreen from '../screens/shop/CartScreen';
 import OrdersScreen from "../screens/shop/OrdersScreen";
 import {Ionicons} from "@expo/vector-icons";
 import UserProductsScreen from "../screens/user/UserProductsScreen";
+import EditProductsScreen from "../screens/user/EditProductsScreen";
 
 
 const defaultNavOptions = {
@@ -56,7 +57,8 @@ const OrdersNavigator = createStackNavigator({
 });
 
 const AdminNavigator = createStackNavigator({
-    UserProducts: UserProductsScreen
+    UserProducts: UserProductsScreen,
+    EditProduct: EditProductsScreen
 }, {
     defaultNavigationOptions: defaultNavOptions,
     navigationOptions: {
