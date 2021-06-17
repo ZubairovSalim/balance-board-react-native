@@ -44,10 +44,14 @@ export const fetchProducts = () => {
 
 export const deleteProduct = productId => {
     return async dispatch => {
-        await fetch(`https://rn-balance-board-default-rtdb.firebaseio.com/products/${productId}.json`,
+        const response = await fetch(`https://rn-balance-board-default-rtdb.firebaseio.com/products/${productId}.json`,
             {
                 method: 'DELETE',
             });
+
+        if (!response.ok) {
+            throw new Error('Something went wrong!');
+        }
 
         dispatch({
             type: DELETE_PRODUCT,
@@ -90,7 +94,7 @@ export const createProduct = (title, description, imageUrl, price) => {
 
 export const updateProduct = (id, title, description, imageUrl) => {
     return async dispatch => {
-        await fetch(
+        const response = await fetch(
             `https://rn-balance-board-default-rtdb.firebaseio.com/products/${id}.json`,
             {
                 method: 'PATCH',
@@ -103,6 +107,10 @@ export const updateProduct = (id, title, description, imageUrl) => {
                     imageUrl,
                 })
             });
+
+        if (!response.ok) {
+            throw new Error('Something went wrong!');
+        }
 
         dispatch({
             type: UPDATE_PRODUCT,
