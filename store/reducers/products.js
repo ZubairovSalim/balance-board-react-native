@@ -20,8 +20,8 @@ export default (state = initialState, action) => {
                 id,
                 ownerId,
                 title,
-                description,
                 imageUrl,
+                description,
                 +price
                 )
             return {
